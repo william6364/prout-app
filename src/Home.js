@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Events from './Events'
 import './index.css';
 import {Image, Grid, Header} from 'semantic-ui-react';
+import SliderTest from './SliderTest';
 class Home extends Component {
     render() {
         return (
@@ -12,7 +12,7 @@ class Home extends Component {
                             <Header size="large">
                                 Recommended Events
                             </Header>
-                            {Events}
+                            <SliderTest />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row columns={2}>
