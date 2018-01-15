@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './index.css';
-import {Grid, Image, Header} from 'semantic-ui-react';
+import {Item, Image} from 'semantic-ui-react';
 class Groups extends Component {
     render(){
         const groups = [
@@ -16,21 +16,25 @@ class Groups extends Component {
             }
         ];
         const groupList = groups.map(function(group){
-            return <Grid.Row columns={2}>
-                        <Grid.Column>
+            return <Item>
+                        <Item.Image>
                             <Image src={group.imageSrc} />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Header as='h2'>{group.name}</Header>
-                            {group.desc}
-                        </Grid.Column>
-                    </Grid.Row>;
+                        </Item.Image>
+                        <Item.Content>
+                            <Item.Header>
+                                {group.name}
+                            </Item.Header>
+                            <Item.Description>
+                                {group.desc}
+                            </Item.Description>
+                        </Item.Content>
+                    </Item>;
         });
         return (
             <div>
-                <Grid>
+                <Item.Group>
                     {groupList}
-                </Grid>
+                </Item.Group>
             </div>
         );
     }

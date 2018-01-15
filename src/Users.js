@@ -1,36 +1,41 @@
 import React, {Component} from 'react';
 import './index.css';
-import {Grid, Image, Header} from 'semantic-ui-react';
+import {Image, Item} from 'semantic-ui-react';
+
 class Users extends Component {
-    render(){
+    render() {
         const users = [
             {
                 name: "User 1",
-                imageSrc:"http://via.placeholder.com/200x200",
+                imageSrc: "http://via.placeholder.com/200x200",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
             },
             {
                 name: "User 2",
-                imageSrc:"http://via.placeholder.com/200x200",
+                imageSrc: "http://via.placeholder.com/200x200",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
             }
         ];
-        const userList = users.map(function(user){
-            return <Grid.Row columns={2}>
-                <Grid.Column>
-                    <Image src={user.imageSrc} />
-                </Grid.Column>
-                <Grid.Column>
-                    <Header as='h2'>{user.name}</Header>
-                    {user.desc}
-                </Grid.Column>
-            </Grid.Row>;
+        const userList = users.map(function(user) {
+            return <Item>
+                        <Item.Image>
+                            <Image src={user.imageSrc}/>
+                        </Item.Image>
+                        <Item.Content>
+                            <Item.Header>
+                                {user.name}
+                            </Item.Header>
+                            <Item.Description>
+                                {user.desc}
+                            </Item.Description>
+                        </Item.Content>
+                    </Item>;
         });
         return (
             <div>
-                <Grid>
+                <Item.Group>
                     {userList}
-                </Grid>
+                </Item.Group>
             </div>
         );
     }
