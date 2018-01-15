@@ -3,7 +3,17 @@ import './index.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {Grid, Image} from 'semantic-ui-react';
+import {Grid, Image, Button} from 'semantic-ui-react';
+class NextArrow extends Component{
+    render() {
+        return <button onClick={this.props.onClick} className='slick-next'><Image src='rightarrow.png' alt='Next'/></button>
+    }
+}
+class PrevArrow extends Component{
+    render() {
+        return <button onClick={this.props.onClick} className='slick-prev'><Image src='leftarrow.png' alt='Previous'/></button>
+    }
+}
 class Events extends Component {
     render(){
         const events = [
@@ -52,7 +62,7 @@ class Events extends Component {
         ];
         const eventSlider = events.map(function(event){
             return <div>
-                    <Grid>
+                    <Grid padded    >
                         <Grid.Row>
                             <Grid.Column>
                                 {event.name}
@@ -85,7 +95,10 @@ class Events extends Component {
             dots: false,
             speed: 500,
             slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToScroll: 3,
+            nextArrow: <NextArrow />,
+            prevArrow: <PrevArrow />,
+            className: 'slick-slider'
         };
         return (
             <Slider {...settings}>
@@ -94,5 +107,4 @@ class Events extends Component {
         );
     }
 }
-
 export default Events;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.css';
 import {Grid, Header} from 'semantic-ui-react';
 import Events from './Events';
+import Groups from './Groups';
 class Home extends Component {
     render() {
         return (
