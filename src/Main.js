@@ -13,7 +13,7 @@ import {Menu, Image} from 'semantic-ui-react';
 class Main extends Component {
     state = {};
 
-    handleItemClick = ({ name }) => this.setState({ activeItem: name });
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
 
     render() {
