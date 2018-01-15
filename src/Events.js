@@ -3,7 +3,7 @@ import './index.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {Grid, Image, Button} from 'semantic-ui-react';
+import {Grid, Image, Header} from 'semantic-ui-react';
 class NextArrow extends Component{
     render() {
         return <button onClick={this.props.onClick} className='slick-next'><Image src='rightarrow.png' alt='Next'/></button>
@@ -19,42 +19,42 @@ class Events extends Component {
         const events = [
             {
                 name: "Event 1",
-                imageSrc:"http://via.placeholder.com/150x150",
+                imageSrc:"http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
             },
             {
                 name: "Event 2",
-                imageSrc:"http://via.placeholder.com/150x150",
+                imageSrc:"http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
             },
             {
                 name: "Event 3",
-                imageSrc: "http://via.placeholder.com/150x150",
+                imageSrc: "http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
             },
             {
                 name: "Event 4",
-                imageSrc: "http://via.placeholder.com/150x150",
+                imageSrc: "http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
             },
             {
                 name: "Event 5",
-                imageSrc: "http://via.placeholder.com/150x150",
+                imageSrc: "http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
             },
             {
                 name: "Event 6",
-                imageSrc: "http://via.placeholder.com/150x150",
+                imageSrc: "http://via.placeholder.com/200x200",
                 date: "Friday, 11 Jul 2018",
                 time: "5.00pm",
                 attendance: "X"
@@ -62,10 +62,10 @@ class Events extends Component {
         ];
         const eventSlider = events.map(function(event){
             return <div>
-                    <Grid padded    >
+                    <Grid padded>
                         <Grid.Row>
                             <Grid.Column>
-                                {event.name}
+                                <Header as='h2'>{event.name}</Header>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>

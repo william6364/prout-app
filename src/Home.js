@@ -10,7 +10,7 @@ class Home extends Component {
                 <Grid celled>
                     <Grid.Row columns={1}>
                         <Grid.Column>
-                            <Header size="large">
+                            <Header as="h1">
                                 Recommended Events
                             </Header>
                             <Events />
@@ -18,12 +18,13 @@ class Home extends Component {
                     </Grid.Row>
                     <Grid.Row columns={2}>
                         <Grid.Column>
-                            <Header size="large">
+                            <Header as="h1">
                                 Recommended Groups
                             </Header>
+                            <Groups />
                         </Grid.Column>
                         <Grid.Column>
-                            <Header size="large">
+                            <Header as="h1">
                                 Users like you
                             </Header>
                         </Grid.Column>
