@@ -3,7 +3,7 @@ import './index.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {Grid, Image, Header} from 'semantic-ui-react';
+import {Image, Header, List} from 'semantic-ui-react';
 class NextArrow extends Component{
     render() {
         return <button onClick={this.props.onClick} className='slick-next'><Image src='rightarrow.png' alt='Next'/></button>
@@ -62,33 +62,23 @@ class Events extends Component {
         ];
         const eventSlider = events.map(function(event){
             return <div>
-                    <Grid padded>
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Header as='h2'>{event.name}</Header>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Image src={event.imageSrc} />
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                                {event.date}
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                                {event.time}
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                                {event.attendance + " attending"}
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                    <List relaxed>
+                        <List.Item>
+                            <Header as='h2'>{event.name}</Header>
+                        </List.Item>
+                        <List.Item>
+                            <Image src={event.imageSrc} />
+                        </List.Item>
+                        <List.Item>
+                            {event.date}
+                        </List.Item>
+                        <List.Item>
+                            {event.time}
+                        </List.Item>
+                        <List.Item>
+                            {event.attendance + " attending"}
+                        </List.Item>
+                    </List>
                 </div>;
         });
         const settings = {
