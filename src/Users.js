@@ -1,39 +1,39 @@
 import React, {Component} from 'react';
 import './index.css';
 import {Grid, Image, Header} from 'semantic-ui-react';
-class Groups extends Component {
+class Users extends Component {
     render(){
-        const groups = [
+        const users = [
             {
-                name: "Group 1",
+                name: "User 1",
                 imageSrc:"http://via.placeholder.com/200x200",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
             },
             {
-                name: "Group 2",
+                name: "User 2",
                 imageSrc:"http://via.placeholder.com/200x200",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
             }
         ];
-        const groupList = groups.map(function(group){
+        const userList = users.map(function(user){
             return <Grid.Row columns={2}>
-                        <Grid.Column>
-                            <Image src={group.imageSrc} />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Header as='h2'>{group.name}</Header>
-                            {group.desc}
-                        </Grid.Column>
-                    </Grid.Row>;
+                <Grid.Column>
+                    <Image src={user.imageSrc} />
+                </Grid.Column>
+                <Grid.Column>
+                    <Header as='h2'>{user.name}</Header>
+                    {user.desc}
+                </Grid.Column>
+            </Grid.Row>;
         });
         return (
             <div>
                 <Grid>
-                    {groupList}
+                    {userList}
                 </Grid>
             </div>
         );
     }
 }
 
-export default Groups;
+export default Users;

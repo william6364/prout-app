@@ -3,6 +3,7 @@ import './index.css';
 import {Grid, Header} from 'semantic-ui-react';
 import Events from './Events';
 import Groups from './Groups';
+import Users from './Users';
 class Home extends Component {
     render() {
         return (
@@ -27,6 +28,7 @@ class Home extends Component {
                             <Header as="h1">
                                 Users like you
                             </Header>
+                            <Users />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
